@@ -1,0 +1,14 @@
+[Unit]
+Description=service
+After=network-online.target 
+Wants=network-online.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/service
+ExecStart=/usr/libexec/service.init start
+ExecStop=/usr/libexec/service.init stop
+ExecReload=/usr/libexec/service.init restart
+
+
+[Install]
+WantedBy=multi-user.target

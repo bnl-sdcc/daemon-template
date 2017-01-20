@@ -1,0 +1,25 @@
+# Sysconfig file for service
+#
+# place this file under /etc/sysconfig/service
+#  DAEMON OPTIONS:
+#  --trace              Set logging level to TRACE [default WARNING], super verbose level
+#  --debug              Set logging level to DEBUG [default WARNING]
+#  --info               Set logging level to INFO [default WARNING]
+#  --quiet              Set logging level to WARNING [default WARNING]
+#  --conf=FILE1[,FILE2,FILE3]
+#                        Load configuration from FILEs (comma separated list)
+#  --runas=ACCOUNT       User account to run as. [autopyfactory]
+#  --log=LOGFILE         Send logging output to LOGFILE or stdout
+# Override default conffile path if desired. 
+#
+# CONFFILE=/etc/service/service.conf
+
+# Options for RPM
+LOGFILE=/var/log/service/service.log
+OPTIONS="--trace --runas=service --log=/var/log/service/service.log"
+CONSOLE_LOG=/var/log/service/service-console.log
+
+# Options for HOME
+#LOGFILE=$HOME/var/log/service/service.log
+#OPTIONS="--trace  --runas=service --log=$HOME/var/log/service/service.log"
+#CONSOLE_LOG=$HOME/var/log/service/service-console.log

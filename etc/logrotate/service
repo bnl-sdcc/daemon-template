@@ -1,0 +1,9 @@
+/var/log/service/service.log {
+    missingok
+    notifempty
+    sharedscripts
+    delaycompress
+    postrotate
+        /bin/systemctl reload service.service > /dev/null 2>/dev/null || true
+    endscript
+}
