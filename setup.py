@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 #
-# Setup prog for autopyfactory
+# Setup prog for PACKAGE 
 #
 #
-# Since script is in package "certify" we can know what to add to path
 
 import commands
 import os
 import re
 import sys
 
-from vc3 import infoservice
+from PACKAGE import infoservice
 release_version=infoservice.__version__
 
 from distutils.core import setup
@@ -30,35 +29,33 @@ if major == 2:
 
 libexec_files = ['libexec/%s' %file for file in os.listdir('libexec') if os.path.isfile('libexec/%s' %file)]
 
-systemd_files = [ 'etc/vc3-service-info.service'
+systemd_files = [ 'etc/PACKAGE'
                  ]
 
-etc_files = ['etc/vc3-info-service.conf',
+etc_files = ['etc/PACKAGE.conf',
              ]
 
 sysconfig_files = [
-             'etc/sysconfig/vc3-info-service',
+             'etc/sysconfig/PACKAGE',
 
 ]
 
-logrotate_files = ['etc/logrotate/vc3-info-service',]
+logrotate_files = ['etc/logrotate/PACKAGE',]
 
-#initd_files = ['/vc3-info-service.init',
+#initd_files = ['/PACKAGE.init',
 #               ]
 
-# NOTES: the docs are actually handled by setup.cfg. They are moved directory under /usr/share/doc/autopyfactory-<version>/
-#docs_files = ['docs/%s' %file for file in os.listdir('docs') if os.path.isfile('docs/%s' %file)]
 
 
 # -----------------------------------------------------------
 
 rpm_data_files=[('/usr/libexec', libexec_files),
-                ('/etc/vc3', etc_files),
+                ('/etc/PACKAGE', etc_files),
                 ('/etc/sysconfig', sysconfig_files),
                 ('/etc/logrotate.d', logrotate_files),                                        
 #                ('/etc/init.d', initd_files),
                 ('/usr/lib/systemd/system', systemd_files),
-                #('/usr/share/doc/autopyfactory', docs_files),                                        
+                #('/usr/share/doc/PACKAGE', docs_files),                                        
                ]
 
 
@@ -95,20 +92,20 @@ def choose_data_files():
 
 # setup for distutils
 setup(
-    name="vc3-info-service",
+    name="PACKAGE",
     version=release_version,
-    description='vc3-info-service package',
-    long_description='''This package contains the VC3 Information Service''',
+    description='PACKAGE package',
+    long_description='''This package contains the PACKAGE''',
     license='GPL',
-    author='John Hover',
-    author_email='jhover@bnl.gov',
-    maintainer='John Hover',
-    maintainer_email='jhover@bnl.gov',
-    url='https://github.com/vc3-project',
-    packages=['vc3',
+    author='AUTHOR',
+    author_email='EMAIL',
+    maintainer='MAINTAINER',
+    maintainer_email='MEMAIL',
+    url='https://github.com/PACKAGE',
+    packages=['service,
               ],
     scripts = [ # Utilities and main script
-               'scripts/vc3-info-service',
+               'scripts/PACKAGE',
               ],
     
     data_files = choose_data_files()
