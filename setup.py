@@ -20,7 +20,7 @@ from distutils.command.install_data import install_data as install_data_org
 major, minor, release, st, num = sys.version_info
 if major == 2:
     if not minor >= 4:
-        print("Autopyfactory requires Python >= 2.4. Exitting.")
+        print("PACKAGE requires Python >= 2.4. Exitting.")
         sys.exit(0)
 
 # ===========================================================
