@@ -102,7 +102,7 @@ setup(
     maintainer='MAINTAINER',
     maintainer_email='MEMAIL',
     url='https://github.com/PACKAGE',
-    packages=['service,
+    packages=['service',
               ],
     scripts = [ # Utilities and main script
                'scripts/PACKAGE',
